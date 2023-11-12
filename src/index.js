@@ -4,7 +4,8 @@ axios.defaults.headers.common["x-api-key"] = "live_fJpEcmsalSnOTXMFW2gIUjht2meB9
 import axios from "axios";
 import SlimSelect from 'slim-select';
 import Notiflix from 'notiflix';
-import { fetchCatByBreed, fetchBreeds } from "./cat-api.js";
+import {fetchCatByBreed} from "./cat-api.js";
+import{fetchBreeds} from "./cat-api.js"
 
 const breedSelect = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
