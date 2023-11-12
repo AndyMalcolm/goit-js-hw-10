@@ -1,78 +1,68 @@
 //start here
 axios.defaults.headers.common["x-api-key"] = "live_fJpEcmsalSnOTXMFW2gIUjht2meB9RjPKKjqwTJM4nwuPumBrJ4W2DyXwf7j0NpU";
 
-const breedSelect = document.getElementById("breed-select");
-const catInfo = document.querySelector(".cat-info");
-const catImage = document.getElementById("cat-image");
-const breedName = document.getElementById("breed-name");
-const description = document.getElementById("description");
-const temperament = document.getElementById("temperament");
-const loader = document.querySelector(".loader");
-const error = document.querySelector(".error");
+import axios from "axios";
+import SlimSelect from 'slim-select';
+import Notiflix from 'notiflix';
+import { fetchCatByBreed, fetchBreeds } from "./cat-api.js";
 
-fetchBreeds()
-  .then((breeds) => {
-    breeds.forEach((breed) => {
-      const option = document.createElement("option");
-      option.value = breed.id;
-      option.textContent = breed.name;
-      breedSelect.appendChild(option);
-    });
-  })
-  .catch((err) => {
-    showError();
+const breedSelect = document.querySelector('.breed-select');
+const catInfo = document.querySelector('.cat-info');
+const loader = document.querySelector('.loader');
+const errorElement = document.querySelector('.error');
+
+const showLoader = () => {
+  loader.style.display = 'block';
+  breedSelect.style.display = 'none';
+  catInfo.style.display = 'none';
+  errorElement.style.display = 'none';
+};
+
+const hideLoader = () => {
+  loader.style.display = 'none';
+  breedSelect.style.display = 'block';
+  catInfo.style.display = 'block';
+  errorElement.style.display = 'none';
+};
+
+const showError = (message) => {
+  errorElement.textContent = message;
+  errorElement.style.display = 'block';
+};
+
+const renderBreeds = (breeds) => {
+  breeds.forEach((breed) => {
+    const option = document.createElement('option');
+    option.value = breed.id;
+    option.textContent = breed.name;
+    breedSelect.appendChild(option);
   });
+};
 
-breedSelect.addEventListener("change", () => {
+const renderCatInfo = (cat) => {
+  catInfo.innerHTML = `
+    <div class="cat-info-container">
+      <div class="cat-photo-container">
+        <img class="cat-photo" src="${cat.url}" alt="cat">
+      </div>
+      <div class="cat-details">
+        <h2>${cat.breeds[0].name}</h2>
+        <p>Description: ${cat.breeds[0].description}</p>
+        <p>Temperament: ${cat.breeds[0].temperament}</p>
+      </div>
+    </div>
+  `;
+};
+
+const handleBreedChange = () => {
   const selectedBreedId = breedSelect.value;
   if (selectedBreedId) {
     showLoader();
     fetchCatByBreed(selectedBreedId)
-      .then((cat) => {
-        displayCatInfo(cat);
+      .then(response => {
         hideLoader();
+        errorElement.style.display = 'none';
+        const cat = response[0];
+        renderCatInfo(cat);
       })
-      .catch((err) => {
-        showError();
-      });
-  }
-});
-
-function showLoader() {
-  catInfo.style.display = "none";
-  loader.style.display = "block";
-  error.style.display = "none";
-}
-
-function hideLoader() {
-  loader.style.display = "none";
-}
-
-function showError() {
-  loader.style.display = "none";
-  error.style.display = "block";
-}
-
-function displayCatInfo(cat) {
-  catImage.src = cat[0].url;
-  breedName.textContent = `Порода: ${cat[0].breeds[0].name}`;
-  description.textContent = `Опис: ${cat[0].breeds[0].description}`;
-  temperament.textContent = `Темперамент: ${cat[0].breeds[0].temperament}`;
-  catInfo.style.display = "block";
-}
-
-export function fetchBreeds() {
-    return axios.get("https://api.thecatapi.com/v1/breeds")
-      .then((response) => response.data)
-      .catch((error) => {
-        throw error;
-      });
-  }
-  
-  export function fetchCatByBreed(breedId) {
-    return axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
-      .then((response) => response.data)
-      .catch((error) => {
-        throw error;
-      });
-  }
+    }}
