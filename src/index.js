@@ -1,11 +1,12 @@
 //start here
 axios.defaults.headers.common["x-api-key"] = "live_fJpEcmsalSnOTXMFW2gIUjht2meB9RjPKKjqwTJM4nwuPumBrJ4W2DyXwf7j0NpU";
 
-import axios from "axios";
+// import axios from "axios";
 // import SlimSelect from 'slim-select';
-// import Notiflix from 'notiflix';
 // import {fetchCatByBreed} from "./cat-api.js";
 // import{fetchBreeds} from "./cat-api.js"
+import Notiflix from 'notiflix';
+
 
 // const breedSelect = document.querySelector('.breed-select');
 // const catInfo = document.querySelector('.cat-info');
