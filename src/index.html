@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <!--<link rel="stylesheet" href="dist/notiflix-3.2.6.min.css" />-->
+
     <script type="module" src="./index.js"></script>
-    <!--<script src="dist/notiflix-3.2.6.min.js"></script>-->
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <span class="loader"></span>
     <include src="./partials/example.html"></include>
+    <select class="breed-select"></select>
+    <p class="loader">Loading data, please wait...</p>
+    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
+    <div class="cat-info"></div>
     
   </body>
 </html>
