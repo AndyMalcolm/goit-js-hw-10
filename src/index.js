@@ -6,7 +6,7 @@ import SlimSelect from 'slim-select'
 // import {fetchCatByBreed} from "./cat-api.js";
 // import{fetchBreeds} from "./cat-api.js"
 import Notiflix from 'notiflix';
-
+//ТОЧНО ЭТИ ДВЕ ШТУКИ ПРАВИЛЬНЫЕ, БИБЛИОТЕКИ ТОЖЕ СКАЧАЛ. КСС ДЛЯ ЗАГРУЗЧИКА ЕСТЬ
 
 // const breedSelect = document.querySelector('.breed-select');
 // const catInfo = document.querySelector('.cat-info');
