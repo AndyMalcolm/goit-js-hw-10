@@ -5,4 +5,4 @@ import SlimSelect from 'slim-select'
 new SlimSelect({
     select: '#selectElement'
   })
-//нотификс есть, код для загрузчика тоже
+//импорты есть, они не обязательны, код для загрузчика тоже
