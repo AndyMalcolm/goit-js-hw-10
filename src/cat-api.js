@@ -1,3 +1,5 @@
+//40999949-91c7d6cea5390f79fde95dcf3 по идее это мой ключ
+
 export function fetchBreeds(){
     const BASE_URL = 'https://api.thecatapi.com/v1';
     const END_POINT = '/breeds';
