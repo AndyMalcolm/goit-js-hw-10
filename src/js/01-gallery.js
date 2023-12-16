@@ -5,6 +5,8 @@
 // import{fetchBreeds} from "./cat-api.js"
 
 
+//СКАЧАТЬ БИБЛИОТЕКИ ИЗ ЛМС
+
 axios.defaults.headers.common["x-api-key"] = "live_LVElnDG0qei7b46LgHfaN0g6p0Q8ltRmuwgyRcjBR890c1CX9OU8WlLveL28bWwO";
 
 const breedSelect = document.querySelector('.breed-select');
