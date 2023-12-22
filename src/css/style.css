@@ -1,6 +1,8 @@
 .search{
 margin-top: 36px;
 margin-bottom: 32px;
+align-items: center;
+display: block;
 /* и тут? */
 }
 .input{
@@ -14,9 +16,28 @@ background: #ffffff;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
+letter-spacing: 4%;
 padding-left: 16px;
 /* тут вроде всё */
 }
+.input:hover{
+border: 1px solid #000000;
+}
+.input:focus{
+border: 1px solid #4E75FF;
+}
 .button{
+width: 91px;
+height: 40px;
+border-radius: 8px;
+padding: 8px, 16px, 8px, 16px;
+background-color: #4E75FF;
 font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 4%;
+}
+.button:hover{
+background-color: #6C8CFF;
 }
