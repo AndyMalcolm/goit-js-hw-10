@@ -39,6 +39,7 @@ font-weight: 500;
 font-size: 16px;
 line-height: 24px;
 letter-spacing: 4%;
+cursor: pointer;
 }
 .button:hover{
 background-color: #6C8CFF;
@@ -52,7 +53,9 @@ background-color: #6C8CFF;
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    color: #fff;
+    color: #000000;
+    position: absolute;
+    margin: 0 auto;
   }
     .loader:before,
     .loader:after {
@@ -68,7 +71,7 @@ background-color: #6C8CFF;
       animation: 1s spin linear infinite;
     }
     .loader:after {
-      color: #FF3D00;
+      color: #4E75FF;
       transform: rotateY(70deg);
       animation-delay: .4s;
     }
