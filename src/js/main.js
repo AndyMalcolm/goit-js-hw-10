@@ -1,12 +1,4 @@
-//here
-// import axios from "axios";
-// import SlimSelect from 'slim-select';
-// import Notiflix from 'notiflix';
-// import {fetchCatByBreed} from "./cat-api.js";
-// import{fetchBreeds} from "./cat-api.js"
 
-
-//СКАЧАТЬ БИБЛИОТЕКИ ИЗ ЛМС
 
 axios.defaults.headers.common["x-api-key"] = "live_LVElnDG0qei7b46LgHfaN0g6p0Q8ltRmuwgyRcjBR890c1CX9OU8WlLveL28bWwO";
 
@@ -131,5 +123,10 @@ export function fetchBreeds(){
   
   iziToast.show({
     title: 'Hey',
-    message: 'What would you like to add?'
+    message: 'Sorry, there are no images matching your search query. Please try again!'
 });
+
+// библиотеки
+
+import SimpleLightbox from "simplelightbox";
+import iziToast from "izitoast";
