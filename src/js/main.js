@@ -132,3 +132,17 @@ import SimpleLightbox from "simplelightbox";
 import iziToast from "izitoast";
 
 // api-key 40999949-91c7d6cea5390f79fde95dcf3
+
+const requestOptions = {
+  url: "https://pixabay.com/api/",
+  method: "GET",
+  headers: {
+    "Authorization": `Bearer ${key}`,
+  },
+  params: {
+    q: "Київ",
+    image_type: "photo",
+    orientation: "horizontal",
+    safesearch: true,
+  },
+};
