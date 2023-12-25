@@ -146,3 +146,44 @@ const requestOptions = {
     safesearch: true,
   },
 };
+
+
+
+async function searchImages(query) {
+  const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.hits.length > 0) {
+      return data.hits;
+    } else {
+      throw new Error("No images found");
+    }
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+function showMessage(message, type = "error") {
+  iziToast.show({
+    title: "Message",
+    message: message,
+    position: "topCenter",
+    timeout: 5000,
+    color: type === "error" ? "red" : "green",
+  });
+}
+async function handleSearch() {
+  const searchInput = document.getElementById("searchInput").value;
+  
+  try {
+    const images = await searchImages(searchInput);
+    images.forEach((image) => {
+      console.log("Image URL:", image.webformatURL);
+    });
+  } catch (error) {
+    showMessage("Sorry, there are no images matching your search query. Please try again!");
+  }
+}
+document.getElementById("searchButton").addEventListener("click", handleSearch);
