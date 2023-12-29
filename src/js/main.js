@@ -201,8 +201,8 @@ document.getElementById("searchButton").addEventListener("click", handleSearch);
 
 
 
-//
+fetch(url, options);
 
 
 
-https://pixabay.com/api/?key=`40999949-91c7d6cea5390f79fde95dcf3`&image_type=`photo`&orientation=`horizontal`&safesearch=`true`;
+// https://pixabay.com/api/?key=`40999949-91c7d6cea5390f79fde95dcf3`&image_type=`photo`&orientation=`horizontal`&safesearch=`true`;
