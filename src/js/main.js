@@ -209,3 +209,4 @@ fetch(url, options);
 // самое новое
 fetch("some")
 new URL().protocol == "http";
+//дописать + try to rewrite
