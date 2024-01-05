@@ -209,10 +209,10 @@ fetch(url, options);
 // самое новое
 fetch("some")
 new URL().protocol == "http";
-//дописать + try to rewrite
+//дописать тут может
 
 
-
+// может лоадер 1 на обычный переделать и чуть изменить
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
