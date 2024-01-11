@@ -4,7 +4,7 @@ axios.defaults.headers.common["x-api-key"] = "live_LVElnDG0qei7b46LgHfaN0g6p0Q8l
 
 const breedSelect = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
-const loader = document.querySelector('.loader');
+// const loader = document.querySelector('.loader');
 const errorElement = document.querySelector('.error');
 
 fetch('https://api.thecatapi.com/v1/breeds')
@@ -214,7 +214,7 @@ new URL().protocol == "http";
 
 // может лоадер 1 на обычный переделать и чуть изменить
 
-
+const loader = document.querySelector('.loader');
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
 const galleryBox = document.querySelector('.gallery-box');
@@ -294,3 +294,4 @@ form.addEventListener('click', event => {
   }
   form.reset();
 });
+// попробовать кошачий переделать под новый
