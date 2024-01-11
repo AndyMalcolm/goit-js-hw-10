@@ -139,8 +139,8 @@ if (data.length === 0) {
 
 // библиотеки
 
-import SimpleLightbox from "simplelightbox";
-import iziToast from "izitoast";
+import SimpleLightbox from 'simplelightbox';
+import iziToast from 'izitoast';
 
 // api-key 40999949-91c7d6cea5390f79fde95dcf3
 
@@ -213,19 +213,16 @@ new URL().protocol == "http";
 
 
 // может лоадер 1 на обычный переделать и чуть изменить
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+
 
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
 const galleryBox = document.querySelector('.gallery-box');
-const loader1 = document.querySelector('.loader');
+
 const input = document.querySelector('input');
 
 let paramsInfo = {
-  key: '37773269-50f55f614e71cb99e92638715',
+  key: '40999949-91c7d6cea5390f79fde95dcf3',
   q: 'black',
   image_type: 'photo',
   orientation: 'horizontal',
@@ -233,11 +230,11 @@ let paramsInfo = {
 };
 
 function searchImg(params) {
-  loader1.style.display = 'block';
+  loader.style.display = 'block';
   gallery.style.display = 'none';
   fetch(`https://pixabay.com/api/?${params}`)
     .then(response => {
-      loader1.style.display = 'none';
+      loader.style.display = 'none';
       gallery.style.display = 'flex';
       if (!response.ok) {
         throw new Error(error.status);
