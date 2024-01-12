@@ -118,8 +118,19 @@ export function fetchBreeds(){
     });
   }
   
+
+
+// https://pixabay.com/api/?key=`40999949-91c7d6cea5390f79fde95dcf3`&image_type=`photo`&orientation=`horizontal`&safesearch=`true`;
+// самое новое
+fetch("some")
+new URL().protocol == "http";
   
-  // изитост
+fetch(url, options);
+//дописать тут может
+
+
+  
+// изитост, тут офф начало работы
   
   iziToast.show({
     title: 'Hey',
@@ -160,59 +171,7 @@ const requestOptions = {
 
 
 
-async function searchImages(query) {
-  const apiUrl = `https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    if (data.hits.length > 0) {
-      return data.hits;
-    } else {
-      throw new Error("No images found");
-    }
-  } catch (error) {
-    throw new Error(error.message);
-  }
-}
-function showMessage(message, type = "error") {
-  iziToast.show({
-    title: "Message",
-    message: message,
-    position: "topCenter",
-    timeout: 5000,
-    color: type === "error" ? "red" : "green",
-  });
-}
-async function handleSearch() {
-  const searchInput = document.getElementById("searchInput").value;
-  
-  try {
-    const images = await searchImages(searchInput);
-    images.forEach((image) => {
-      console.log("Image URL:", image.webformatURL);
-    });
-  } catch (error) {
-    showMessage("Sorry, there are no images matching your search query. Please try again!");
-  }
-}
-document.getElementById("searchButton").addEventListener("click", handleSearch);
-
-
-
-fetch(url, options);
-
-
-
-// https://pixabay.com/api/?key=`40999949-91c7d6cea5390f79fde95dcf3`&image_type=`photo`&orientation=`horizontal`&safesearch=`true`;
-// самое новое
-fetch("some")
-new URL().protocol == "http";
-//дописать тут может
-
-
-// может лоадер 1 на обычный переделать и чуть изменить
+// менять тут
 
 const loader = document.querySelector('.loader');
 const form = document.querySelector('.form');
