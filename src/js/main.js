@@ -33,25 +33,25 @@ import iziToast from 'izitoast';
 
 // api-key 40999949-91c7d6cea5390f79fde95dcf3
 
-const requestOptions = {
-  url: "https://pixabay.com/api/",
-  method: "GET",
-  headers: {
-    "Authorization": `Bearer ${key}`,
-  },
-  params: {
-    q: "Київ",
-    image_type: "photo",
-    orientation: "horizontal",
-    safesearch: true,
-  },
-};
+// const requestOptions = {
+//   url: "https://pixabay.com/api/",
+//   method: "GET",
+//   headers: {
+//     "Authorization": `Bearer ${key}`,
+//   },
+//   params: {
+//     q: "Київ",
+//     image_type: "photo",
+//     orientation: "horizontal",
+//     safesearch: true,
+//   },
+// };
 
 
 
 // менять тут
 
-const loader = document.querySelector('.loader');
+// const loader = document.querySelector('.loader');
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
 const galleryBox = document.querySelector('.gallery-box');
@@ -131,4 +131,111 @@ form.addEventListener('click', event => {
   }
   form.reset();
 });
-// попробовать кошачий переделать под новый
+// и тут менять
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const searchForm = document.querySelector('.picture-search-form');
+const searchInput = document.querySelector('.picture-search-name');
+const loaderContainer = document.querySelector('.loader-container');
+const loader = document.querySelector('.loader');
+
+const API_KEY = '41764451-f0ee5e8d00846e21c9f97a054';
+
+function showLoader() {
+  loaderContainer.style.display = 'block';
+  loader.style.display = 'block';
+}
+function hideLoader() {
+  loaderContainer.style.display = 'none';
+  loader.style.display = 'none';
+}
+
+let requestParams = {
+  key: API_KEY,
+  q: '',
+  image_type: 'photo',
+  orientation: 'horizontal',
+  safesearch: true,
+};
+
+function searchImages(query) {
+  requestParams.q = query;
+  const searchParams = new URLSearchParams(requestParams);
+
+  showLoader();
+
+  fetch(`https://pixabay.com/api/?${searchParams}`)
+    .then(response => {
+      hideLoader();
+
+      if (!response.ok) {
+        throw new Error(
+          'Sorry, there are no images matching your search query. Please try again!'
+        );
+      }
+      return response.json();
+    })
+
+    .then(({ hits }) => {
+      const gallery = document.querySelector('.gallery');
+
+      const lightbox = new SimpleLightbox('.gallery a', {
+        captionDelay: 250,
+        captionsData: 'alt',
+        close: true,
+      });
+
+      gallery.innerHTML = '';
+
+      gallery.innerHTML = hits.reduce(
+        (html, image) =>
+          html +
+          `<a class="gallery-link" href="${image.largeImageURL}">
+            <img
+                class="gallery-image"
+                src="${image.webformatURL}"
+                alt="${image.tags}"
+            />
+           <ul class="info-list">
+              <li class="info-item">
+                  <p class="info-title">Likes</p>
+                  <p class="info-value">${image.likes}</p>
+              </li>
+              <li class="info-item">
+                  <p class="info-title">Views</p>
+                  <p class="info-value">${image.views}</p>
+              </li>
+              <li class="info-item">
+                  <p class="info-title">Comments</p>
+                  <p class="info-value">${image.comments}</p>
+              </li>
+              <li class="info-item">
+                  <p class="info-title">Downloads</p>
+                  <p class="info-value">${image.downloads}</p>
+              </li>
+            </ul>
+        </a>`,
+        ''
+      );
+
+      lightbox.refresh();
+    })
+    .catch(error => {
+      iziToast.error({
+        title: 'Error',
+        message: error.message,
+        position: 'topRight',
+      });
+    });
+}
+
+searchForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const searchQuery = searchInput.value.trim();
+  searchImages(searchQuery);
+});
