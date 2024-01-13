@@ -132,18 +132,18 @@ form.addEventListener('click', event => {
   form.reset();
 });
 // и тут менять
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+// import iziToast from 'izitoast';
+// import 'izitoast/dist/css/iziToast.min.css';
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+// import SimpleLightbox from 'simplelightbox';
+// import 'simplelightbox/dist/simple-lightbox.min.css'; это есть
 
 const searchForm = document.querySelector('.picture-search-form');
 const searchInput = document.querySelector('.picture-search-name');
 const loaderContainer = document.querySelector('.loader-container');
 const loader = document.querySelector('.loader');
 
-const API_KEY = '41764451-f0ee5e8d00846e21c9f97a054';
+const API_KEY = '40999949-91c7d6cea5390f79fde95dcf3';
 
 function showLoader() {
   loaderContainer.style.display = 'block';
