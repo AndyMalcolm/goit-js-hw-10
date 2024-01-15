@@ -1,5 +1,3 @@
-// https://pixabay.com/api/?key=`40999949-91c7d6cea5390f79fde95dcf3`&image_type=`photo`&orientation=`horizontal`&safesearch=`true`;
-// самое новое
 fetch("some")
 new URL().protocol == "http";
   
@@ -136,7 +134,7 @@ form.addEventListener('click', event => {
 // import 'izitoast/dist/css/iziToast.min.css';
 
 // import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css'; это есть
+// import 'simplelightbox/dist/simple-lightbox.min.css'; это есть в разделе библиотеки
 
 const searchForm = document.querySelector('.picture-search-form');
 const searchInput = document.querySelector('.picture-search-name');
