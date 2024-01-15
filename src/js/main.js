@@ -49,7 +49,6 @@ import iziToast from 'izitoast';
 
 
 
-// менять тут
 
 // const loader = document.querySelector('.loader');
 const form = document.querySelector('.form');
@@ -58,13 +57,13 @@ const galleryBox = document.querySelector('.gallery-box');
 
 const input = document.querySelector('input');
 
-let paramsInfo = {
-  key: '40999949-91c7d6cea5390f79fde95dcf3',
-  q: 'black',
-  image_type: 'photo',
-  orientation: 'horizontal',
-  safesearch: true,
-};
+// let paramsInfo = {
+//   key: '40999949-91c7d6cea5390f79fde95dcf3',
+//   q: 'black',
+//   image_type: 'photo',
+//   orientation: 'horizontal',
+//   safesearch: true,
+// }; уже есть
 
 function searchImg(params) {
   loader.style.display = 'block';
@@ -131,7 +130,8 @@ form.addEventListener('click', event => {
   }
   form.reset();
 });
-// и тут менять
+// тут менять основное
+
 // import iziToast from 'izitoast';
 // import 'izitoast/dist/css/iziToast.min.css';
 
@@ -155,12 +155,13 @@ function hideLoader() {
 }
 
 let requestParams = {
-  key: API_KEY,
+  key: '40999949-91c7d6cea5390f79fde95dcf3',
   q: '',
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
 };
+
 
 function searchImages(query) {
   requestParams.q = query;
