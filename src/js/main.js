@@ -1,27 +1,15 @@
-// fetch("some")
-// new URL().protocol == "http";
-  
-// fetch(url, options);
-//дописать тут может
-
-
-  
-// изитост, тут офф начало работы
+// изитост
   
 //   iziToast.show({
 //     title: 'Hey',
 //     message: 'Sorry, there are no images matching your search query. Please try again!'
 // });
-
-
-
 // if (data.length === 0) {
 //   iziToast.error({
 //     title: 'Error',
 //     message: 'Sorry, there are no images matching your search query. Please try again.',
 //   });
 // } else {
-
 // }
 
 // библиотеки
