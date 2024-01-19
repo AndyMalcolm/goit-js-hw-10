@@ -10,6 +10,8 @@ gap: 8px;
 /* и тут? */
 }
 .input{
+  /* в хтмл бывший picture-search-name */
+  /* тут с формой всё ок, теперь фокус взять с того */
 width: 272px;
 height: 40px;
 
@@ -31,6 +33,7 @@ border: 1px solid #000000;
 border: 1px solid #4E75FF;
 }
 .button{
+  /* в хтмл бывший picture-search-button */
 width: 91px;
 height: 40px;
 border-radius: 8px;
@@ -46,6 +49,9 @@ letter-spacing: 4%;
 cursor: pointer;
 }
 .button:hover{
+background-color: #6C8CFF;
+}
+.button:focus{
 background-color: #6C8CFF;
 }
 
@@ -249,13 +255,6 @@ background-color: #6C8CFF;
   letter-spacing: 0.04em;
 }
 
-.picture-search-name:hover {
-  border: 1px solid #000;
-}
-.picture-search-name:focus {
-  border: 1px solid #4e75ff;
-}
-
 .picture-search-name::placeholder {
   font-family: Montserrat;
   font-size: 16px;
@@ -282,11 +281,7 @@ background-color: #6C8CFF;
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
-
-.picture-search-button:hover,
-.picture-search-button:focus {
-  background-color: #6c8cff;
-}
+/* тут настройки для формы и кнопки сравнить со своими и понять зачем picture-search */
 
 .hide {
   opacity: 0;
