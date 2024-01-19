@@ -1,6 +1,7 @@
 /* LOADER */
 
 .search{
+  /* в хтмл бывший picture-search-form */
 margin-top: 36px;
 margin-bottom: 32px;
 align-items: center;
@@ -33,7 +34,7 @@ border: 1px solid #000000;
 border: 1px solid #4E75FF;
 }
 .button{
-  /* в хтмл бывший picture-search-button */
+  /* в хтмл бывший picture-search-button эти 3 класса проверить с теми и удалить те 3*/
 width: 91px;
 height: 40px;
 border-radius: 8px;
