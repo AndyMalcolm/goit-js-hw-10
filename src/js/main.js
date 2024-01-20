@@ -1,31 +1,9 @@
-// изитост
-  
-//   iziToast.show({
-//     title: 'Hey',
-//     message: 'Sorry, there are no images matching your search query. Please try again!'
-// });
-// if (data.length === 0) {
-//   iziToast.error({
-//     title: 'Error',
-//     message: 'Sorry, there are no images matching your search query. Please try again.',
-//   });
-// } else {
-// }
-
 // библиотеки
 
 import SimpleLightbox from 'simplelightbox';
 import iziToast from 'izitoast';
 
 // api-key 40999949-91c7d6cea5390f79fde95dcf3
-
-// тут менять основное
-
-// import iziToast from 'izitoast';
-// import 'izitoast/dist/css/iziToast.min.css';
-
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css'; это есть в разделе библиотеки
 
 const searchForm = document.querySelector('.search');
 const searchInput = document.querySelector('.input');
