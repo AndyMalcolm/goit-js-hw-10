@@ -78,7 +78,14 @@
   }
 }
 
-/* GALLERY основная */
+.loader-container {
+  margin: 0 auto;
+  display: none;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+}
+
+/* FORM */
 
 .search{
 margin-top: 36px;
@@ -109,7 +116,6 @@ border: 1px solid #000000;
 border: 1px solid #4E75FF;
 }
 .button{
-  /* в хтмл бывший picture-search-button эти 3 класса проверить с теми и удалить те 3*/
 width: 91px;
 height: 40px;
 border-radius: 8px;
@@ -131,8 +137,7 @@ background-color: #6C8CFF;
 background-color: #6C8CFF;
 }
 
-
-  /* GALLERY сверху почистить и сравнять с нижним*/
+  /* GALLERY */
 
   :root {
     font-family: 'Montserrat', sans-serif;
@@ -149,42 +154,28 @@ background-color: #6C8CFF;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
   }
-  
-  /* .gallery-box {
-    max-width: 1440px;
-    padding: 16px;
-    margin: 0 auto;
-  }
-  
+
   .gallery {
     display: flex;
+    width: 1128px;
+    padding-bottom: 24px;
+    margin: 48px auto;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
   }
   
-  .gallery-item {
-    width: calc((100% - 72px) / 4);
-    box-shadow: 5px 5px 10px #696969;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+  .gallery-link {
+    display: block;
+    width: 360px;
+  
+    flex-shrink: 0;
   }
   
-  .gallery-img {
+  .gallery-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
   }
-  
-  .gallery-text-box {
-    border: 1px solid black;
-    padding: 8px 16px;
-    display: flex;
-    justify-content: space-around;
-    gap: 8px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  } */
-/* ВРОДЕ ЭТО НЕ НАДО, ЗАВТРА ГЛЯНУТЬ И УДАЛИТЬ */
 
   .hide {
     opacity: 0;
@@ -192,7 +183,7 @@ background-color: #6C8CFF;
     pointer-events: none;
   }
 
-/* js-classes */
+/* JS CLASSES */
 
 .info-list {
   display: flex;
@@ -214,35 +205,4 @@ background-color: #6C8CFF;
   font-size: 13px;
 }
 
-/* new remake отсюда снизу удалять и взять если что, сверху єтого уже основной код*/
-
 /* осталось сравнить галерею эту с моей, проверить весь ли код тут есть оттуда и понять зачем name picture-search */
-
-.gallery {
-  display: flex;
-  width: 1128px;
-  padding-bottom: 24px;
-  margin: 48px auto;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.gallery-link {
-  display: block;
-  width: 360px;
-
-  flex-shrink: 0;
-}
-
-.gallery-image {
-  width: 100%;
-  height: 200px;
-}
-
-.loader-container {
-  margin: 0 auto;
-  display: none;
-  border-right: 4px solid transparent;
-  box-sizing: border-box;
-}
