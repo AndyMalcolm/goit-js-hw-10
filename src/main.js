@@ -1,7 +1,8 @@
 // библиотеки
-
 import SimpleLightbox from 'simplelightbox';
+import "simplelightbox/dist/simple-lightbox.min.css";
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 // api-key 40999949-91c7d6cea5390f79fde95dcf3
 
