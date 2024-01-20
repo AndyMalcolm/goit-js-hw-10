@@ -27,8 +27,8 @@ import iziToast from 'izitoast';
 // import SimpleLightbox from 'simplelightbox';
 // import 'simplelightbox/dist/simple-lightbox.min.css'; это есть в разделе библиотеки
 
-const searchForm = document.querySelector('.picture-search-form');
-const searchInput = document.querySelector('.picture-search-name');
+const searchForm = document.querySelector('.search');
+const searchInput = document.querySelector('.input');
 const loaderContainer = document.querySelector('.loader-container');
 const loader = document.querySelector('.loader');
 
